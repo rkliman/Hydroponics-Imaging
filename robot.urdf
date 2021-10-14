@@ -1,0 +1,83 @@
+<robot name="hydroponics_robot">
+
+    <!-- * * * Link Definitions * * * -->
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0.02385" rpy="0 0 0"/>
+            <axis xyz="0 0 0" />
+            <geometry>
+                <cylinder radius="0.05" length=".0477"/>
+            </geometry>
+            <material name="c">
+                <color rgba="0 0.9 0.9 1.0"/>
+            </material>
+        </visual>
+    </link>
+    <link name="revolution_link">
+        <visual>
+            <origin xyz="0 0 0.0592" rpy="0 0 0"/>
+            <axis xyz="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.023"/>
+            </geometry>
+        </visual>
+    </link>
+    <link name="shoulder_link">
+        <visual>
+            <origin xyz="0 0 .125" rpy="0 0 0"/>
+            <axis xyz="0 0 0" />
+            <geometry>
+                <box size=".0306 .036 .25"/>
+            </geometry>
+        </visual>
+    </link>
+    <link name="forearm_link">
+        <visual>
+            <origin xyz="0 0 .110" rpy="0 0 0"/>
+            <axis xyz="0 0 0" />
+            <geometry>
+                <box size=".0306 .036 .22"/>
+            </geometry>
+        </visual>
+    </link>
+    <link name="wrist_link">
+        <visual>
+            <origin xyz="0 0 .06" rpy="0 0 0"/>
+            <axis xyz="0 0 0" />
+            <geometry>
+                <box size=".0306 .036 .12"/>
+            </geometry>
+        </visual>
+    </link>
+    <link name="camera_link">
+        <visual>
+            <origin xyz="0 0 .024" rpy="0 0 0"/>
+            <axis xyz="0 0 0" />
+            <geometry>
+                <box size=".0306 .036 .048"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="shoulder_joint" type="revolute">
+        <parent link="revolution_link"/>
+        <child link="shoulder_link"/>
+        <origin xyz="0 0 0.0707" rpy="0 0 0"/>
+    </joint>
+    <joint name="forearm_joint" type="revolute">
+        <parent link="shoulder_link"/>
+        <child link="forearm_link"/>
+        <origin xyz="0 0 .25" rpy="0 0 0"/>
+    </joint>s
+    <joint name="wrist_joint" type="revolute">
+        <parent link="forearm_link"/>
+        <child link="wrist_link"/>
+        <origin xyz="0 0 .22" rpy="0 0 0"/>
+    </joint>
+    <joint name="camera_joint" type="revolute">
+        <parent link="wrist_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0 0 .12" rpy="0 0 0"/>
+    </joint>
+</robot>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/PyMesh" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PyMesh/third_party/Clipper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PyMesh/third_party/TetWild" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PyMesh/third_party/WindingNumber" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PyMesh/third_party/carve" vcs="Git" />
+  </component>
+</project>
